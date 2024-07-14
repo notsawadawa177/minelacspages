@@ -23,6 +23,11 @@
     .btn:hover, .style-btn:hover {
       background-color: #333333; /* Более светлый тёмный фон при наведении */
     }
+    .gradient-text {
+      background: -webkit-linear-gradient(orange, yellow);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   </style>
 </head>
 
@@ -36,7 +41,7 @@
         <div class="flex lg:order-2">
           <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-admin-black focus:ring-gray-700" aria-controls="navbar-sticky" aria-expanded="false">
             <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+              <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
             </svg>
           </button>
         </div>
@@ -72,9 +77,9 @@
   <main>
     <section class="first-section">
       <div class="info-block">
-        <h1 class="title">MineLacs</h1>
+        <h1 class="title gradient-text">MineLacs</h1>
         <p class="desc">Он такой один!</p>
-        <button onclick="location.href='#center'" class="buy-penetration-top style-btn">Начать играть</button>
+        <button onclick="location.href='#how-to-join'" class="buy-penetration-top style-btn">Начать играть</button>
       </div>
       <div class="bg-image" data-aos="zoom-in" data-aos-duration="1000"></div>
     </section>

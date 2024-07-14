@@ -1,0 +1,1 @@
+const spollerItems=document.querySelectorAll(".spoller-item");spollerItems.forEach(e=>{e.addEventListener("click",function(s){s.target.classList.contains("link")||(e.classList.contains("active")?e.classList.remove("active"):(spollerItems.forEach(s=>{s.classList.remove("active")}),e.classList.add("active")))})});

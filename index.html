@@ -1,0 +1,367 @@
+<!DOCTYPE html><html class="scroll-smooth"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="js/M8J4dEZcR-J-6vze4-w-BG3MZDM.js"></script><link href="css/style.css" rel="stylesheet">
+<link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
+<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" /> -->
+  <title>Royale RP - Ванильный Minecraft сервер</title>
+  <meta property="og:title" content="Royale RP - Ванильный Minecraft сервер">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.min.css">
+  <!-- <link rel="stylesheet" href="./css/modal.css" /> -->
+  <link rel="stylesheet" href="css/aos.css">
+</head>
+
+<body class="min-w-[400px]">
+  <header class=" shadow-xl ">
+  <nav class="font-inter font-semibold px-2 md:px-2 sm:px-4 lg:py-0 py-2.5  w-full z-20 top-0 left-0">
+    <div class="container flex flex-wrap items-center justify-between mx-auto">
+      <a href="https://royalerp.ru/" class="flex items-center">
+        <img src="images/logo.png" class="" alt="Logo">
+      </a>
+      <div class="flex lg:order-2">
+        <div class="profil-btn-wraper">
+          <button class="image-btn">
+            <img src="images/user.svg" alt="Profil" class="mr-3 user-profil-image">
+          </button>
+          <div style="width: 240px; right: 14px;" class="warning-message-profil p-2 hidden absolute z-10 inline-block text-sm text-gray-500 duration-300 bg-white border border-gray-200 rounded-lg shadow-sm">Вам требуется приобрести проходку чтобы пользоватся личным кабинетом</div>
+        </div>
+        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-admin-black focus:ring-gray-700" aria-controls="navbar-sticky" aria-expanded="false">
+          <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="items-center justify-between mx-auto lg:pr-12 hidden w-full lg:static lg:top-12 lg:left-0 px-3 lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
+        <ul class="flex flex-col font-montserrat font-normal px-4 py-5 mt-4 border rounded-lg lg:flex-row lg:space-x-6 lg:mt-0 lg:text-base lg:font-medium lg:border-0 bg-admin-black 
+             border-gray-700">
+          <li class="relative item-menu">
+            <a href="/index.php" class="text-black  rounded-lg lg:py-2.5
+                  hover:text-rorange duration-100 transition-all flex items-center lg:block px-5 py-4" aria-current="page">
+              <svg class="lg:hidden w-8 mr-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.25 11.9998L11.2045 3.04533C11.6438 2.60599 12.3562 2.60599 12.7955 3.04532L21.75 11.9998M4.5 9.74983V19.8748C4.5 20.4961 5.00368 20.9998 5.625 20.9998H9.75V16.1248C9.75 15.5035 10.2537 14.9998 10.875 14.9998H13.125C13.7463 14.9998 14.25 15.5035 14.25 16.1248V20.9998H18.375C18.9963 20.9998 19.5 20.4962 19.5 19.8748V9.74983M8.25 20.9998H16.5" stroke="#FFA401" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              Главная</a>
+          </li>
+          <li>
+            <a href="https://wiki.royalerp.ru/" target="_blank" class="text-black rounded-lg lg:py-2.5
+                 hover:text-rorange duration-100 transition-all flex items-center lg:block px-5 py-4">
+              <svg class="lg:hidden w-8 mr-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.25933 10.1463C3.98688 12.2303 3.82139 14.348 3.76853 16.4936C6.66451 17.7027 9.41893 19.1831 12 20.9032C14.5811 19.1831 17.3355 17.7027 20.2315 16.4936C20.1786 14.348 20.0131 12.2303 19.7407 10.1463M4.25933 10.1463C3.38362 9.85193 2.49729 9.58071 1.60107 9.33333C4.84646 7.0585 8.32741 5.09683 12 3.49219C15.6727 5.09683 19.1536 7.05851 22.399 9.33334C21.5028 9.58073 20.6164 9.85196 19.7407 10.1463M4.25933 10.1463C6.94656 11.0495 9.5338 12.1705 12.0001 13.4883C14.4663 12.1705 17.0535 11.0496 19.7407 10.1463M6.75 14.9996C7.16421 14.9996 7.5 14.6638 7.5 14.2496C7.5 13.8354 7.16421 13.4996 6.75 13.4996C6.33579 13.4996 6 13.8354 6 14.2496C6 14.6638 6.33579 14.9996 6.75 14.9996ZM6.75 14.9996V11.3241C8.44147 10.2731 10.1936 9.31058 12 8.44293M4.99264 19.9923C6.16421 18.8207 6.75 17.2852 6.75 15.7496V14.2496" stroke="#FFA401" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              Вики</a>
+          </li>
+          <li>
+            <a href="/map.php" class="text-black rounded-lg lg:py-2.5
+                 hover:text-rorange duration-100 transition-all flex items-center lg:block px-5 py-4">
+              <svg class="lg:hidden w-8 mr-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.8929 13.3929L19.7582 12.2582C19.5872 12.0872 19.4449 11.8897 19.3367 11.6734L18.2567 9.5133C18.1304 9.26078 17.7938 9.20616 17.5942 9.4058C17.3818 9.61824 17.0708 9.69881 16.782 9.61627L15.5091 9.25259C15.0257 9.11447 14.5239 9.40424 14.402 9.892C14.3108 10.2566 14.4587 10.6392 14.7715 10.8476L15.3582 11.2388C15.9489 11.6326 16.0316 12.4684 15.5297 12.9703L15.3295 13.1705C15.1185 13.3815 15 13.6676 15 13.966V14.3768C15 14.7846 14.8892 15.1847 14.6794 15.5344L13.3647 17.7254C12.9834 18.3611 12.2964 18.75 11.5552 18.75C10.9724 18.75 10.5 18.2776 10.5 17.6948V16.5233C10.5 15.6033 9.93986 14.7759 9.08563 14.4343L8.43149 14.1726C7.44975 13.7799 6.8739 12.7566 7.04773 11.7136L7.05477 11.6714C7.10117 11.393 7.19956 11.1257 7.3448 10.8837L7.43421 10.7347C7.92343 9.91928 8.87241 9.49948 9.80483 9.68597L10.9827 9.92153C11.5574 10.0365 12.124 9.69096 12.285 9.12744L12.4935 8.39774C12.6422 7.87721 12.3991 7.32456 11.9149 7.08245L11.25 6.75L11.159 6.84099C10.7371 7.26295 10.1648 7.5 9.56802 7.5H9.38709C9.13924 7.5 8.90095 7.59905 8.7257 7.7743C8.44222 8.05778 8.00814 8.12907 7.64958 7.94979C7.16433 7.70716 6.98833 7.10278 7.26746 6.63757L8.67936 4.2844C8.82024 4.04961 8.91649 3.79207 8.96453 3.52474M20.8929 13.3929C20.9634 12.9389 21 12.4737 21 12C21 7.02944 16.9706 3 12 3C10.9348 3 9.91287 3.18504 8.96453 3.52474M20.8929 13.3929C20.2234 17.702 16.4968 21 12 21C7.02944 21 3 16.9706 3 12C3 8.09461 5.48749 4.77021 8.96453 3.52474" stroke="#FFA401" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              Карта</a>
+          </li>
+          <!-- data-table="/rules/" -->
+          <!-- <li>
+            <a href="/stats.php" 
+              class="text-black rounded-lg lg:py-2.5
+                   hover:text-rorange duration-100 transition-all flex items-center lg:block px-5 py-4">
+              <svg class="lg:hidden w-8 mr-3" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 6.04168C10.4077 4.61656 8.30506 3.75 6 3.75C4.94809 3.75 3.93834 3.93046 3 4.26212V18.5121C3.93834 18.1805 4.94809 18 6 18C8.30506 18 10.4077 18.8666 12 20.2917M12 6.04168C13.5923 4.61656 15.6949 3.75 18 3.75C19.0519 3.75 20.0617 3.93046 21 4.26212V18.5121C20.0617 18.1805 19.0519 18 18 18C15.6949 18 13.5923 18.8666 12 20.2917M12 6.04168V20.2917"
+                  stroke="#FFA401" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              Статистика</a>
+          </li> -->
+          <li>
+            <a href="/votes.php" class="text-black rounded-lg lg:py-2.5
+                 hover:text-rorange duration-100 transition-all flex items-center lg:block px-5 py-4">
+              <svg class="lg:hidden w-8 mr-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.25 11.25L11.2915 11.2293C11.8646 10.9427 12.5099 11.4603 12.3545 12.082L11.6455 14.918C11.4901 15.5397 12.1354 16.0573 12.7085 15.7707L12.75 15.75M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM12 8.25H12.0075V8.2575H12V8.25Z" stroke="#FFA401" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              Голосования</a>
+          </li>
+          <li>
+            <a href="/court.php" class="text-black rounded-lg lg:py-2.5
+                 hover:text-rorange duration-100 transition-all flex items-center lg:block px-5 py-4">
+              <svg class="lg:hidden w-8 mr-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.25 18.75C7.71719 18.75 13.0136 19.4812 18.0468 20.8512C18.7738 21.0491 19.5 20.5086 19.5 19.7551V18.75M3.75 4.5V5.25C3.75 5.66421 3.41421 6 3 6H2.25M2.25 6V5.625C2.25 5.00368 2.75368 4.5 3.375 4.5H20.25M2.25 6V15M20.25 4.5V5.25C20.25 5.66421 20.5858 6 21 6H21.75M20.25 4.5H20.625C21.2463 4.5 21.75 5.00368 21.75 5.625V15.375C21.75 15.9963 21.2463 16.5 20.625 16.5H20.25M21.75 15H21C20.5858 15 20.25 15.3358 20.25 15.75V16.5M20.25 16.5H3.75M3.75 16.5H3.375C2.75368 16.5 2.25 15.9963 2.25 15.375V15M3.75 16.5V15.75C3.75 15.3358 3.41421 15 3 15H2.25M15 10.5C15 12.1569 13.6569 13.5 12 13.5C10.3431 13.5 9 12.1569 9 10.5C9 8.84315 10.3431 7.5 12 7.5C13.6569 7.5 15 8.84315 15 10.5ZM18 10.5H18.0075V10.5075H18V10.5ZM6 10.5H6.0075V10.5075H6V10.5Z" stroke="#FFA401" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              Суд</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<script>
+  document.querySelectorAll("div>ul>li>a").forEach(e => {
+    if (e.href == location.href || location.href.includes(e.dataset.table)) {
+      e.style.color = "rgb(255 164 1)"
+    }
+  })
+</script>
+    
+  <main>
+    <section class="first-section">
+      <div class="info-block">
+        <h1 class="title">Royale RP</h1>
+        <p class="desc">Ванильный Minecraft сервер, где вы можете найти новых друзей. Без привата, гриферства и
+          донатов!</p>
+        <button onclick="location.href=`shop.php`" class="buy-penetration-top style-btn">Купить проходку</button>
+      </div>
+      <div class="bg-image" data-aos="zoom-in" data-aos-duration="1000"></div>
+    </section>
+    <section class="second-section">
+      <div class="container-rrp">
+        <div class="wraper">
+          <h2 class="title-section">Чем можно занятся?</h2>
+          <ul class="todo">
+            <li class="todo-item" data-aos="fade-up" data-aos-duration="1000">
+              <img src="images/1.png" alt="" class="todo-image">
+              <div class="todo-info">
+                <h1 class="todo-item-title">Выживайте</h1>
+                <p class="todo-item-desc">Основной принцип сервера — классическое, ванильное выживание с
+                  другими игроками</p>
+              </div>
+            </li>
+            <li class="todo-item" data-aos="fade-up" data-aos-duration="1100">
+              <img src="images/2.png" alt="" class="todo-image">
+              <div class="todo-info">
+                <h1 class="todo-item-title">Вступайте в города</h1>
+                <p class="todo-item-desc">Города — это места объединения игроков, где строятся постройки
+                  и фермы, где люди находят новых друзей</p>
+              </div>
+            </li>
+            <li class="todo-item" data-aos="fade-up" data-aos-duration="1200">
+              <img src="images/3.png" alt="" class="todo-image">
+              <div class="todo-info">
+                <h1 class="todo-item-title">Торгуйте</h1>
+                <p class="todo-item-desc">�&nbsp;аботайте, добывайте ресурсы, откройте бизнес и продавайте
+                  вещи на рынке</p>
+              </div>
+            </li>
+            <li class="todo-item" data-aos="fade-up" data-aos-duration="1300">
+              <img src="images/4.png" alt="" class="todo-image">
+              <div class="todo-info">
+                <h1 class="todo-item-title">Участвуйте в ивентах</h1>
+                <p class="todo-item-desc">Торгуйте на аукционах, решайте конфликты в судах, участвуйте в
+                  наборах на гос.должности</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+    <section class="three-section">
+      <div class="container-rrp">
+        <div class="wraper">
+          <div class="block-content">
+            <h2 class="title">Как попасть на сервер?</h2>
+            <p class="desc">Для игры на сервере вы можете купить проходку или заполнить анкету</p>
+            <div class="buttons">
+              <a href="shop.php" class="btn">Проходка</a>
+              <a href="https://discord.gg/YX7ehWtKHW" class="btn questionnaire-btn">Анкета</a>
+              <div class="popup-disabled-questionnaire-btn hidden">В связи с большим наплывом игроков мы
+                временно отключили анкеты</div>
+            </div>
+          </div>
+        </div>
+        <img src="images/5.png" alt="" class="bg-image" data-aos="fade-up" data-aos-duration="1000">
+      </div>
+    </section>
+    <section class="four-section">
+      <div class="container-rrp">
+        <div class="wraper">
+          <h2 class="section-title">Мы уникальны!</h2>
+          <ul class="card-list">
+            <li class="card" data-aos="fade-up" data-aos-duration="1000">
+              <div class="card-header">
+                <div class="wraper-title">
+                  <img src="images/balance_wallet.svg" alt="" class="title-icon">
+                  <h3 class="card-title">Банковские карты на сайте</h3>
+                </div>
+                <p class="card-desc">
+                  Оформите нашу карту в отделении банка на сервере и оплачивайте покупки через
+                  интернет, также как вы оплачиваете покупки в реальной жизни
+                </p>
+              </div>
+              <a href="https://wiki.royalerp.ru/" class="card-link" style="color: #0FD4FF;" target="_blank">Как это работает?</a>
+            </li>
+            <li class="card" data-aos="fade-up" data-aos-duration="1200">
+              <div class="card-header">
+                <div class="wraper-title">
+                  <img src="images/brush.svg" alt="" class="title-icon">
+                  <h3 class="card-title">Кастомизируйте игру</h3>
+                </div>
+                <p class="card-desc">
+                  На нашем сервере присутствует множество интересных самописных плагинов, которые
+                  улучшат игру для вас и окружающих
+                </p>
+              </div>
+              <a href="https://wiki.royalerp.ru/" class="card-link" style="color: #79FF63;" target="_blank">Как это работает?</a>
+            </li>
+            <li class="card" data-aos="fade-up" data-aos-duration="1400">
+              <div class="card-header">
+                <div class="wraper-title">
+                  <img src="images/block.svg" alt="" class="title-icon">
+                  <h3 class="card-title">Творческий сервер</h3>
+                </div>
+                <p class="card-desc">
+                  Проектируйте постройки вместе с другими игроками в творческом режиме, чтобы потом
+                  переносить их в выживание
+                </p>
+              </div>
+              <a href="https://wiki.royalerp.ru/" class="card-link" style="color: #FFE765;" target="_blank">Как это работает?</a>
+            </li>
+            <li class="card" data-aos="fade-up" data-aos-duration="1600">
+              <div class="card-header">
+                <div class="wraper-title">
+                  <img src="images/voice.svg" alt="" class="title-icon">
+                  <h3 class="card-title">Общайтесь через голосовой чат</h3>
+                </div>
+                <p class="card-desc">
+                  Голосовой чат погружает и сближает вас с персонажами в игре — вы общаетесь с ними
+                  как в реальной жизни
+                </p>
+              </div>
+              <a href="https://wiki.royalerp.ru/" class="card-link" style="color: #EE85FF;" target="_blank">Как это работает?</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="five-section">
+      <div class="container-rrp">
+        <div class="wraper">
+          <h2 class="section-title">Есть вопросы?</h2>
+          <h3 class="section-subtitle">Собрали для вас ответы на самые частые вопросы о сервере</h3>
+          <div class="block">
+            <img src="images/6.png" alt="" class="image-block">
+            <div class="wraper-spoller">
+              <ul class="spoller-list">
+                <li class="spoller-item">
+                  <h1 class="spoller-item-title">Нужна лицензия?</h1>
+                  <div class="text-container">
+                    <p class="spoller-item-desc">Нет, можно играть с пиратки</p>
+                  </div>
+                </li>
+                <li class="spoller-item">
+                  <h1 class="spoller-item-title">Можно играть с телефона?</h1>
+                  <div class="text-container">
+                    <p class="spoller-item-desc">Да, можно. Ознакомьтесь подробнее:  <a href="https://wiki.royalerp.ru/" class="link" target="_blank">Подробнее</a></p>
+                  </div>
+                </li>
+                <li class="spoller-item">
+                  <h1 class="spoller-item-title">Зачем платить за проходку?</h1>
+                  <div class="text-container">
+                    <p class="spoller-item-desc">Так отсеивается большее число гриферов</p>
+                  </div>
+                </li>
+                <li class="spoller-item">
+                  <h1 class="spoller-item-title">Какой средний онлайн?</h1>
+                  <div class="text-container">
+                    <p class="spoller-item-desc">В первые дни средний онлайн составляет 35-45 человек. Теперь планиурем побить рекорд в 70+ онлайна</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="six-section">
+      <div class="container-rrp">
+        <div class="wraper">
+          <h2 class="section-title">Cомневаетесь?</h2>
+          <h3 class="section-subtitle">Погрузитесь в жизнь сервера ещё до покупки проходки</h3>
+          <div class="wraper-cards-links">
+            <ul class="content-cards-links">
+              <li class="item-card" data-aos="fade-up" data-aos-duration="1000">
+                <a href="https://discord.gg/NjRXm4hFPT" class="item-card-link" target="_blank">
+                  <div class="image-wraper" style="background-color: #E6E8FD;">
+                    <img src="images/discord.svg" alt="" class="img">
+                  </div>
+                  <div class="info-wraper">
+                    <h3 class="title-card-link">Discord-сервер</h3>
+                    <span class="desc-card-link">Познакомьтесь с сообществом</span>
+                  </div>
+                </a>
+              </li>
+              <li class="item-card" data-aos="fade-up" data-aos-duration="1100">
+                <a href="https://vk.com/royalerp1" class="item-card-link" target="_blank">
+                  <div class="image-wraper" style="background-color: #D9EBFF;">
+                    <img src="images/vk.svg" alt="" class="img">
+                  </div>
+                  <div class="info-wraper">
+                    <h3 class="title-card-link">ВКонтакте</h3>
+                    <span class="desc-card-link">Новости и скриншоты</span>
+                  </div>
+                </a>
+              </li>
+              <li class="item-card" data-aos="fade-up" data-aos-duration="1200">
+                <a href="https://t.me/royalerp_season4" class="item-card-link" target="_blank">
+                  <div class="image-wraper" style="background-color: #DFF2FC;">
+                    <img src="images/tg.svg" alt="" class="img">
+                  </div>
+                  <div class="info-wraper">
+                    <h3 class="title-card-link">Телеграм</h3>
+                    <span class="desc-card-link">Общайтесь с игроками</span>
+                  </div>
+                </a>
+              </li>
+              <li class="item-card" data-aos="fade-up" data-aos-duration="1300">
+                <a href="https://wiki.royalerp.ru/" class="item-card-link" target="_blank">
+                  <div class="image-wraper" style="background-color: #EAE0DD;">
+                    <img src="images/book.png" alt="" class="img">
+                  </div>
+                  <div class="info-wraper">
+                    <h3 class="title-card-link">Вики</h3>
+                    <span class="desc-card-link">Подробнее про жизнь сервера</span>
+                  </div>
+                </a>
+              </li>
+              <li class="item-card" data-aos="fade-up" data-aos-duration="1400">
+                <a href="https://www.youtube.com/channel/UCUDqxvZzly9t4QsISf9QdbQ" class="item-card-link" target="_blank">
+                  <div class="image-wraper" style="background-color: #FFD9D9;">
+                    <img src="images/youtube.svg" alt="" class="img">
+                  </div>
+                  <div class="info-wraper">
+                    <h3 class="title-card-link">YouTube - канал</h3>
+                    <span class="desc-card-link">Убедитесь, что сервер активный</span>
+                  </div>
+                </a>
+              </li>
+              <li class="item-card" data-aos="fade-up" data-aos-duration="1500">
+                <a href="map.html" class="item-card-link" target="_blank">
+                  <div class="image-wraper" style="background-color: #EDEDE2;">
+                    <img src="images/map.png" alt="" class="img">
+                  </div>
+                  <div class="info-wraper">
+                    <h3 class="title-card-link">Интерактивная карта</h3>
+                    <span class="desc-card-link">Посмотрите на наш мир</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+  </footer>
+  <script src="js/jquery.min.js"></script>
+  <!-- <script src="js/app.min.js"></script> -->
+  <script src="js/warning-profil.js"></script>
+  <script src="js/spoller.min.js"></script>
+  <!-- <script src="js/menu.min.js"></script> -->
+  <script src="js/aos.min.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+<script src="js/flowbite.min.js"></script>
+</body></html>

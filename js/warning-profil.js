@@ -9,7 +9,7 @@ btnProfil.addEventListener("click", function(){
             warningMessageProfil.classList.add("hidden");
         }, 5000);
     } else {
-        // Сообщение видимо, переходим на https://royalelk.ru/
-        window.location.href = "https://royalelk.ru/";
+        // Сообщение видимо, переходим на https://notsawadawa177.github.io/minelacspages/
+        window.location.href = "https://notsawadawa177.github.io/minelacspages/";
     }
 });

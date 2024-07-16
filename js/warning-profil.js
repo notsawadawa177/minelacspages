@@ -10,6 +10,6 @@ btnProfil.addEventListener("click", function(){
         }, 5000);
     } else {
         // Сообщение видимо, переходим на https://minelacs.ru/
-        window.location.href = "https://minelacs.ru/";
+        window.location.href = "https://minelacs.ru/ ";
     }
 });

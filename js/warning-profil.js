@@ -9,7 +9,7 @@ btnProfil.addEventListener("click", function(){
             warningMessageProfil.classList.add("hidden");
         }, 5000);
     } else {
-        // Сообщение видимо, переходим на https://notsawadawa177.github.io/minelacspages/
-        window.location.href = "https://notsawadawa177.github.io/minelacspages/";
+        // Сообщение видимо, переходим на https://minelacs.ru/
+        window.location.href = "https://minelacs.ru/";
     }
 });

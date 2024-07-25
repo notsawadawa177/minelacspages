@@ -1,187 +1,321 @@
 <!DOCTYPE html>
 <html class="scroll-smooth">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MineLacs - Он такой один</title>
-  <meta property="og:title" content="MineLacs - Он такой один">
-
-  <!-- Подключаем файлы стилей -->
+  <script src="js/M8J4dEZcR-J-6vze4-w-BG3MZDM.js"></script>
   <link href="css/style.css" rel="stylesheet">
   <link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
+  <title>MineLacs - Он такой один</title>
+  <meta property="og:title" content="MineLacs - Он такой один">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="stylesheet" href="css/aos.css">
-
-  <!-- Встроенные стили -->
   <style>
-    /* Основной стиль для фона и текста */
     body {
-      background-color: #121212; /* Темный фон */
-      color: #ffffff; /* Белый текст для контраста */
+      background-color: #121212; /* Тёмный фон */ 
+      color: #ffffff; /* Белый текст для контраста */ 
     }
-
-    /* Стиль для кнопок */
     .btn, .style-btn {
-      background-color: #1e1e1e; /* Темный фон кнопок */
+      background-color: #1e1e1e; /* Тёмный фон кнопок */
       color: #ffffff; /* Белый текст на кнопках */
     }
-
     .btn:hover, .style-btn:hover {
-      background-color: #333333; /* Более светлый темный фон при наведении */
+      background-color: #333333; /* Более светлый тёмный фон при наведении */
     }
-
-    /* Градиентный текст для различных элементов */
     .gradient-text {
       background: -webkit-linear-gradient(orange, yellow);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
+    .nav-link {
+      color: #ffffff; /* Белый текст для навигационных ссылок */
+    }
+    .nav-link:hover {
+      color: #ff8c00; /* Оранжевый текст при наведении */
+    }
     .gradient-discord {
       background: -webkit-linear-gradient(darkblue, blue);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     .gradient-boosty {
       background: -webkit-linear-gradient(orange, yellow);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     .gradient-telegram {
       background: -webkit-linear-gradient(blue, lightblue);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
-    /* Цвет для навигационных ссылок и их состояния при наведении */
-    .nav-link {
-      color: #ffffff; /* Белый текст для навигационных ссылок */
-    }
-
-    .nav-link:hover {
-      color: #ff8c00; /* Оранжевый текст при наведении */
-    }
   </style>
 </head>
 
 <body class="min-w-[400px]">
-
-  <!-- Шапка сайта -->
-  <header class="shadow-xl">
-    <nav class="font-inter font-semibold px-2 md:px-2 sm:px-4 lg:py-0 py-2.5 w-full z-20 top-0 left-0" style="background-color: #1a1a1a;">
-      <div class="container flex flex-wrap items-center justify-between mx-auto">
-        <!-- Логотип -->
-        <a href="https://minelacs.ru/" class="flex items-center">
-          <img src="images/logo.png" alt="Logo">
-        </a>
-        <div class="flex lg:order-2">
-          <!-- Кнопка меню для мобильных устройств -->
-          <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-admin-black focus:ring-gray-700" aria-controls="navbar-sticky" aria-expanded="false">
-            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M3 5a1 1 011-1h12a1 1 110 2H4a1 1 01-1-1zM3 10a1 1 011-1h12a1 1 110 2H4a1 1 0 01-1-1zM3 15a1 1 011-1h12a1 1 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-            </svg>
-          </button>
-        </div>
-        <!-- Меню навигации для больших экранов -->
-        <div class="items-center justify-between mx-auto lg:pr-12 hidden w-full lg:static lg:top-12 lg:left-0 px-3 lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
-          <ul class="flex flex-col font-montserrat font-normal px-4 py-5 mt-4 border rounded-lg lg:flex-row lg:space-x-6 lg:mt-0 lg:text-base lg:font-medium lg:border-0 bg-admin-black border-gray-700">
-            <!-- Ссылки навигации -->
-            <li>
-              <a href="https://docs.minelacs.ru/" target="_blank" class="nav-link rounded-lg lg:py-2.5 hover:text-rorange duration-100 transition-all flex items-center lg:block px-5 py-4">Вики</a>
-            </li>
-            <li>
-              <a href="https://discord.gg/6u47fz6dCP" target="_blank" class="nav-link rounded-lg lg:py-2.5 hover:text-rorange duration-100 transition-all flex items-center lg:block px-5 py-4">Discord</a>
-            </li>
-            <li>
-              <a href="https://t.me/minelacs" target="_blank" class="nav-link rounded-lg lg:py-2.5 hover:text-rorange duration-100 transition-all flex items-center lg:block px-5 py-4">Telegram</a>
-            </li>
-            <li>
-              <a href="https://boosty.to/minelacs" target="_blank" class="nav-link rounded-lg lg:py-2.5 hover:text-rorange duration-100 transition-all flex items-center lg:block px-5 py-4">Boosty</a>
-            </li>
-          </ul>
-        </div>
+<header class="shadow-xl">
+  <nav class="font-inter font-semibold px-2 md:px-2 sm:px-4 lg:py-0 py-2.5 w-full z-20 top-0 left-0" style="background-color: #1a1a1a;"> <!-- Светлее фон -->
+    <div class="container flex flex-wrap items-center justify-between mx-auto">
+      <a href="https://minelacs.ru/" class="flex items-center">
+        <img src="images/logo.png" class="" alt="Logo">
+      </a>
+      <div class="flex lg:order-2">
+        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-admin-black focus:ring-gray-700" aria-controls="navbar-sticky" aria-expanded="false">
+          <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3 5a1 1 011-1h12a1 1 110 2H4a1 1 01-1-1zM3 10a1 1 011-1h12a1 1 110 2H4a1 1 0 01-1-1zM3 15a1 1 011-1h12a1 1 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
       </div>
-    </nav>
-  </header>
+      <div class="items-center justify-between mx-auto lg:pr-12 hidden w-full lg:static lg:top-12 lg:left-0 px-3 lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
+        <ul class="flex flex-col font-montserrat font-normal px-4 py-5 mt-4 border rounded-lg lg:flex-row lg:space-x-6 lg:mt-0 lg:text-base lg:font-medium lg:border-0 bg-admin-black border-gray-700">
+          <!-- Удалена кнопка "Главная" -->
+          <li>
+            <a href="https://docs.minelacs.ru/" target="_blank" class="nav-link rounded-lg lg:py-2.5 hover:text-rorange duration-100 transition-all flex items-center lg:block px-5 py-4">
+              Вики
+            </a>
+          </li>
+          <li>
+            <a href="https://discord.gg/6u47fz6dCP" target="_blank" class="nav-link rounded-lg lg:py-2.5 hover:text-rorange duration-100 transition-all flex items-center lg:block px-5 py-4">
+              Discord
+            </a>
+          </li>
+          <li>
+            <a href="https://t.me/minelacs" target="_blank" class="nav-link rounded-lg lg:py-2.5 hover:text-rorange duration-100 transition-all flex items-center lg:block px-5 py-4">
+              Telegram
+            </a>
+          </li>
+          <li>
+            <a href="https://boosty.to/minelacs" target="_blank" class="nav-link rounded-lg lg:py-2.5 hover:text-rorange duration-100 transition-all flex items-center lg:block px-5 py-4">
+              Boosty
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 
-  <!-- Основной контент -->
   <main>
-    <!-- Секция первого экрана -->
     <section class="first-section">
       <div class="info-block">
         <h1 class="title gradient-text">MineLacs</h1>
         <p class="desc">Он такой один!</p>
-        <!-- Кнопка присоединения -->
         <button onclick="window.location.href = 'https://discord.com/invite/6u47fz6dCP'" class="buy-penetration-top style-btn">Присоединится</button>
       </div>
       <div class="bg-image" data-aos="zoom-in" data-aos-duration="1000"></div>
     </section>
-
-    <!-- Секция команды -->
     <section id="center" class="second-section">
       <div class="container-rrp">
         <div class="wraper">
-          <h2 class="title-section" style="color: #ffffff;">Наша Команда</h2>
-          <ul class="todo">
-            <!-- Члены команды -->
-            <li class="todo-item" data-aos="fade-up" data-aos-duration="1000">
-              <img src="https://mc-heads.net/head/0c81442c-240b-4087-851f-f50f3d8fd589/128" alt="SawDawa177_" class="todo-image">
-              <div class="todo-info">
-                <h1 class="todo-item-title" style="color: #ffffff;">
-                  <a href="https://discord.com/users/803639665960681502" style="color: inherit; text-decoration: none;">SawaDawa177_</a>
-                </h1>
-                <p class="todo-item-desc" style="color: #ffffff;">Главный Администратор и Разработчик сервера</p>
+<h2 class="title-section" style="color: #ffffff;">Наша Команда</h2>
+<ul class="todo">
+  <li class="todo-item" data-aos="fade-up" data-aos-duration="1000">
+    <img src="https://mc-heads.net/head/0c81442c-240b-4087-851f-f50f3d8fd589/128" alt="SawDawa177_" class="todo-image">
+    <div class="todo-info">
+      <h1 class="todo-item-title" style="color: #ffffff;">
+        <a href="https://discord.com/users/803639665960681502" style="color: inherit; text-decoration: none;">SawaDawa177_</a>
+      </h1>
+      <p class="todo-item-desc" style="color: #ffffff;">Главный Админстратор и Разработчик сервера</p>
+    </div>
+  </li>
+  <li class="todo-item" data-aos="fade-up" data-aos-duration="1100">
+    <img src="https://mc-heads.net/head/ceb1b631-d2ff-4166-8458-e4c8498e1248/128" alt="GreatShow6102" class="todo-image">
+    <div class="todo-info">
+      <h1 class="todo-item-title" style="color: #ffffff;">
+        <a href="https://discord.com/users/508385398666297383" style="color: inherit; text-decoration: none;">GreatShow6102</a>
+      </h1>
+      <p class="todo-item-desc" style="color: #ffffff;">Редактор Вики, Администратор Дискорд Сервера</p>
+    </div>
+  </li>
+  <li class="todo-item" data-aos="fade-up" data-aos-duration="1200">
+    <img src="https://mc-heads.net/head/d2b496f0-c2b0-4849-8dee-a6bda731a7eb/128" alt="Nub4ik1" class="todo-image">
+    <div class="todo-info">
+      <h1 class="todo-item-title" style="color: #ffffff;">
+        <a href="https://discord.com/users/733200455324401676" style="color: inherit; text-decoration: none;">Nub4ik1</a>
+      </h1>
+      <p class="todo-item-desc" style="color: #ffffff;">Модератор Дискорд Сервера</p>
+    </div>
+  </li>
+  <!-- Удалена четвертая карточка -->
+</ul>
+        </div>
+      </div>
+    </section>
+    <section class="four-section">
+      <div class="container-rrp">
+        <div class="wraper">
+          <h2 class="section-title">Чем можно занятся?</h2>
+          <ul class="card-list">
+            <li class="card" data-aos="fade-up" data-aos-duration="1000">
+              <div class="card-header">
+                <div class="wraper-title">
+                <img src="images/balance_wallet.svg" alt="" class="title-icon">
+                <h3 class="card-title">Банковские карты на сайте</h3>
               </div>
-            </li>
-            <li class="todo-item" data-aos="fade-up" data-aos-duration="1100">
-              <img src="https://mc-heads.net/head/ceb1b631-d2ff-4166-8458-e4c8498e1248/128" alt="GreatShow6102" class="todo-image">
-              <div class="todo-info">
-                <h1 class="todo-item-title" style="color: #ffffff;">
-                  <a href="https://discord.com/users/508385398666297383" style="color: inherit; text-decoration: none;">GreatShow6102</a>
-                </h1>
-                <p class="todo-item-desc" style="color: #ffffff;">Редактор Вики, Администратор Дискорд Сервера</p>
+              <p class="card-desc">
+                Оформите нашу карту в отделении банка на сервере и оплачивайте покупки через
+                интернет, также как вы оплачиваете покупки в реальной жизни
+              </p>
+            </div>
+            <a href="https://docs.minelacs.ru/" class="card-link" style="color: #0FD4FF;" target="_blank">Как это работает?</a>
+          </li>
+          <li class="card" data-aos="fade-up" data-aos-duration="1200">
+            <div class="card-header">
+              <div class="wraper-title">
+                <img src="images/brush.svg" alt="" class="title-icon">
+                <h3 class="card-title">Кастомизируйте игру</h3>
               </div>
-            </li>
-            <li class="todo-item" data-aos="fade-up" data-aos-duration="1200">
-              <img src="https://mc-heads.net/head/d2b496f0-c2b0-4849-8dee-a6bda731a7eb/128" alt="Nub4ik1" class="todo-image">
-              <div class="todo-info">
-                <h1 class="todo-item-title" style="color: #ffffff;">
-                  <a href="https://discord.com/users/734755153908079125" style="color: inherit; text-decoration: none;">Nub4ik1</a>
-                </h1>
-                <p class="todo-item-desc" style="color: #ffffff;">Модератор сервера</p>
+              <p class="card-desc">
+                На нашем сервере присутствует множество интересных самописных плагинов, которые
+                улучшат игру для вас и окружающих
+              </p>
+            </div>
+            <a href="https://docs.minelacs.ru/" class="card-link" style="color: #79FF63;" target="_blank">Как это работает?</a>
+          </li>
+          <li class="card" data-aos="fade-up" data-aos-duration="1400">
+            <div class="card-header">
+              <div class="wraper-title">
+                <img src="images/block.svg" alt="" class="title-icon">
+                <h3 class="card-title">Творческий сервер</h3>
               </div>
-            </li>
-            <li class="todo-item" data-aos="fade-up" data-aos-duration="1300">
-              <img src="https://mc-heads.net/head/3b8d790a-df36-45b2-908e-2f4b68d80e34/128" alt="MarlonPik" class="todo-image">
-              <div class="todo-info">
-                <h1 class="todo-item-title" style="color: #ffffff;">
-                  <a href="https://discord.com/users/945331057641527296" style="color: inherit; text-decoration: none;">MarlonPik</a>
-                </h1>
-                <p class="todo-item-desc" style="color: #ffffff;">Модератор сервера</p>
+              <p class="card-desc">
+                Проектируйте постройки вместе с другими игроками в творческом режиме, чтобы потом
+                переносить их в выживание
+              </p>
+            </div>
+            <a href="https://docs.minelacs.ru/" class="card-link" style="color: #FFE765;" target="_blank">Как это работает?</a>
+          </li>
+          <li class="card" data-aos="fade-up" data-aos-duration="1600">
+            <div class="card-header">
+              <div class="wraper-title">
+                <img src="images/voice.svg" alt="" class="title-icon">
+                <h3 class="card-title">Общайтесь через голосовой чат</h3>
               </div>
-            </li>
-          </ul>
+              <p class="card-desc">
+                Голосовой чат погружает и сближает вас с персонажами в игре — вы общаетесь с ними
+                как в реальной жизни
+              </p>
+            </div>
+            <a href="https://docs.minelacs.ru/" class="card-link" style="color: #EE85FF;" target="_blank">Как это работает?</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="five-section" id="faq">
+    <div class="container-rrp">
+      <div class="wraper">
+        <h2 class="section-title">FAQ</h2>
+        <h3 class="section-subtitle">Собрали для вас ответы на самые частые вопросы о сервере</h3>
+        <div class="block">
+          <img src="images/6.png" alt="" class="image-block">
+          <div class="wraper-spoller">
+            <ul class="spoller-list">
+              <li class="spoller-item">
+                <h1 class="spoller-item-title">Нужна лицензия?</h1>
+                <div class="text-container">
+                  <p class="spoller-item-desc">Нет, можно играть с пиратки</p>
+                </div>
+              </li>
+              <!-- С телефона играть нельзя, удалено-->
+              <li class="spoller-item">
+                <h1 class="spoller-item-title">Нужно ли платить за вход/покупка проходки?</h1>
+                <div class="text-container">
+                  <p class="spoller-item-desc">Нет. На данный момент не планируется делать платные проходки, весь основной контент доступен всем желающим, но те, кто желает поддержать нас финансово, наш Boosty всегда доступен!</p>
+                </div>
+              </li>
+              <li class="spoller-item">
+                <h1 class="spoller-item-title">Сколько могут прожить сезоны?</h1>
+                <div class="text-container">
+                  <p class="spoller-item-desc">Наши сезоны живут не очень долго, а именно 2–3 месяца. Связано это с маленьким онлайном, поэтому вся мотивация — это вы.</p>
+                <li class="spoller-item">
+                  <h1 class="spoller-item-title">Остались вопросы, к кому обратится?</h1>
+                  <div class="text-container">
+                    <p class="spoller-item-desc">Смотря какого рода вопрос вас интересует, <a href="#center" style="color: #ffffff;">Наша команда</a> поможет вам!</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="six-section">
+      <div class="container-rrp">
+        <div class="wraper">
+          <h2 class="section-title">Наши ссылки</h2>
+          <h3 class="section-subtitle">Одним кликом окунись в атмосферу нашего сервера!</h3>
+          <div class="wraper-cards-links">
+            <ul class="content-cards-links">
+<li class="item-card" data-aos="fade-up" data-aos-duration="1000">
+  <a href="https://discord.gg/6u47fz6dCP" class="item-card-link" target="_blank">
+    <div class="image-wraper" style="background-color: #E6E8FD;">
+      <img src="images/discord.svg" alt="" class="img">
+    </div>
+    <div class="info-wraper">
+      <h3 class="title-card-link" style="background: linear-gradient(to right, #7289DA, #99AAB5); -webkit-background-clip: text; color: transparent;">Discord-сервер</h3>
+      <span class="desc-card-link" style="color: #FFFFFF;">Познакомьтесь с сообществом</span>
+    </div>
+  </a>
+</li>
+<li class="item-card" data-aos="fade-up" data-aos-duration="1100">
+  <a href="https://boosty.to/minelacs" class="item-card-link" target="_blank">
+    <div class="image-wraper" style="background-color: #FBCCBC;">
+      <img src="images/boosty.png" alt="" class="img">
+    </div>
+    <div class="info-wraper">
+      <h3 class="title-card-link" style="background: linear-gradient(to right, #FF8C00, #FFD700); -webkit-background-clip: text; color: transparent;">Наш Boosty</h3>
+      <span class="desc-card-link" style="color: #FFFFFF;">Мы ценим вашу финансовую поддержку</span>
+    </div>
+  </a>
+</li>
+<li class="item-card" data-aos="fade-up" data-aos-duration="1200">
+  <a href="https://t.me/minelacs" class="item-card-link" target="_blank">
+    <div class="image-wraper" style="background-color: #DFF2FC;">
+      <img src="images/tg.svg" alt="" class="img">
+    </div>
+    <div class="info-wraper">
+      <h3 class="title-card-link" style="background: linear-gradient(to right, #0088CC, #00BFFF); -webkit-background-clip: text; color: transparent;">Telegram</h3>
+      <span class="desc-card-link" style="color: #FFFFFF;">Самая секретная информация находится только там</span>
+    </div>
+  </a>
+</li>
+<li class="item-card" data-aos="fade-up" data-aos-duration="1200">
+</li>
+<li class="item-card" data-aos="fade-up" data-aos-duration="1200">
+  <a href="https://docs.minelacs.ru/" class="item-card-link" target="_blank">
+    <div class="image-wraper" style="background-color: #EAE0DD;">
+      <img src="images/book.png" alt="" class="img">
+    </div>
+    <div class="info-wraper">
+      <h3 class="title-card-link" style="color: #FFFFFF;">Вики</h3>
+      <span class="desc-card-link" style="color: #FFFFFF;">Подробнее про жизнь сервера</span>
+    </div>
+  </a>
+</li>
+              <!-- Ссылка на Ютуб удалена-->
+              <!-- Ссылка на Карту удалена-->
+            </ul>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Подвал сайта -->
   <footer>
-    <div class="text-center pt-10 pb-10 bg-admin-black text-gray-400">
-      <p class="text-sm" style="color: #ffffff;">© 2024 <span class="gradient-text">MineLacs</span>. Все права защищены.</p>
-    </div>
   </footer>
-
-  <!-- Подключаем скрипты -->
-  <script src="js/aos.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <!-- <script src="js/app.min.js"></script> -->
+  <script src="js/warning-profil.js"></script>
+  <script src="js/spoller.min.js"></script>
+  <!-- <script src="js/menu.min.js"></script> -->
+  <script src="js/aos.min.js"></script>
   <script>
-    AOS.init(); // Инициализация анимаций
+    AOS.init();
   </script>
-</body>
 
-</html>
+
+<script src="js/flowbite.min.js"></script>
+</body></html>
+<script src="js/flowbite.min.js"></script>
+</body></html>

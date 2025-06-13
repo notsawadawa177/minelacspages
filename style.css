@@ -53,6 +53,11 @@ html[data-theme='dark'] {
     padding: 0;
 }
 
+::selection {
+    background-color: var(--orange-500);
+    color: white;
+}
+
 html {
     scroll-behavior: smooth;
     font-size: 16px;
@@ -656,8 +661,309 @@ html[data-theme='light'] .feature-card-inner {
     line-height: 1.5;
 }
 
+@keyframes icon-bounce {
+  0%, 100% {
+    transform: translateY(0) translateZ(40px);
+  }
+  50% {
+    transform: translateY(-8px) translateZ(40px);
+  }
+}
+
+.anim-icon:hover {
+    animation: icon-bounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
 /* ------------------- */
-/* -- 8. ФУТЕР (FOOTER) -- */
+/* -- 8. СЕКЦИЯ FAQ -- */
+/* ------------------- */
+#faq {
+    padding-bottom: 0;
+}
+#faq .container {
+    max-width: 800px;
+}
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.faq-item {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    cursor: pointer;
+    text-align: left;
+}
+.faq-arrow {
+    color: var(--text-secondary-color);
+    transition: transform var(--transition-medium);
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+.faq-item.active .faq-arrow {
+    transform: rotate(180deg);
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                padding 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.faq-answer p {
+    padding: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+    color: var(--text-secondary-color);
+}
+
+
+/* ------------------- */
+/* -- 8.5 СТРАНИЦА 404 -- */
+/* ------------------- */
+.error-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+.error-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.error-title {
+    font-size: clamp(8rem, 25vw, 15rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0;
+    background: linear-gradient(45deg, var(--yellow-400), var(--orange-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.error-subtitle {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: -2rem;
+}
+.error-text {
+    font-size: 1rem;
+    color: var(--text-secondary-color);
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+}
+
+
+/* ------------------- */
+/* -- 9. СЕКЦИЯ CTA (Призыв к действию) -- */
+/* ------------------- */
+#cta-final {
+    padding: 6rem 0; /* ИСПРАВЛЕНИЕ: Возвращаем отступ */
+}
+.cta-card {
+    background-color: var(--surface-color);
+    padding: 6rem 2rem;
+    border-radius: 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+.cta-content {
+    position: relative;
+    z-index: 2;
+}
+.cta-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    padding: 2px;
+    background: conic-gradient(from var(--angle, 0deg), var(--border-dark), var(--orange-500), var(--border-dark));
+    animation: spin 5s linear infinite;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+}
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes spin {
+  to {
+    --angle: 360deg;
+  }
+}
+.cta-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+.cta-btn {
+    padding: 1rem 3rem;
+    font-size: 1.125rem;
+}
+
+.cta-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.cta-particles span {
+    position: absolute;
+    bottom: -20px;
+    background-color: var(--orange-500);
+    border-radius: 50%;
+    opacity: 0;
+    animation: float-up 10s linear infinite;
+    filter: blur(2px);
+}
+@keyframes float-up {
+    0% { transform: translateY(0); opacity: 0; }
+    10%, 90% { opacity: 0.3; }
+    100% { transform: translateY(-120vh); opacity: 0; }
+}
+.cta-particles span:nth-child(1) { left: 10%; width: 8px; height: 8px; animation-delay: 1s; }
+.cta-particles span:nth-child(2) { left: 25%; width: 4px; height: 4px; animation-delay: 3s; animation-duration: 12s; }
+.cta-particles span:nth-child(3) { left: 40%; width: 10px; height: 10px; animation-delay: 0s; animation-duration: 8s; }
+.cta-particles span:nth-child(4) { left: 60%; width: 6px; height: 6px; animation-delay: 5s; }
+.cta-particles span:nth-child(5) { left: 75%; width: 5px; height: 5px; animation-delay: 8s; animation-duration: 15s; }
+.cta-particles span:nth-child(6) { left: 90%; width: 12px; height: 12px; animation-delay: 4s; }
+
+
+/* --- НОВОЕ: Стили для модального окна игры --- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-medium), visibility var(--transition-medium);
+}
+.modal-overlay.hidden {
+    display: none;
+}
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    transform: scale(0.95);
+    transition: transform var(--transition-medium);
+}
+.modal-overlay.visible .modal-content {
+    transform: scale(1);
+}
+.modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-secondary-color);
+    cursor: pointer;
+    line-height: 1;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+.modal-close:hover {
+    color: var(--text-color);
+    transform: scale(1.1);
+}
+.modal-content h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+.modal-content p {
+    color: var(--text-secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Стили для игры */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+/* --- НОВОЕ: Стиль для блокировки поля --- */
+.board.locked {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.cell {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+.cell:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+html[data-theme='light'] .cell:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.cell.x {
+    color: var(--orange-500);
+}
+.cell.o {
+    color: var(--text-secondary-color);
+}
+
+/* ------------------- */
+/* -- 11. ФУТЕР (FOOTER) -- */
 /* ------------------- */
 .main-footer {
     background-color: var(--surface-color);
@@ -674,24 +980,22 @@ html[data-theme='light'] .feature-card-inner {
 .footer-left {
     text-align: left;
 }
-
-/* --- ИСПРАВЛЕНИЕ: Стили для нового блока с лого и текстом --- */
 .footer-brand {
     display: flex;
     align-items: center;
-    gap: 1rem; /* Отступ между картинкой и текстом */
+    gap: 1rem;
 }
 .footer-logo-img {
     height: 48px;
     width: auto;
+    cursor: pointer; /* Намекаем на интерактивность для пасхалки */
 }
 .footer-brand-text {
     display: flex;
     flex-direction: column;
 }
-
 .footer-logo-text {
-    font-size: 1.5rem; /* Немного уменьшил для баланса */
+    font-size: 1.5rem;
     font-weight: 800;
     background: linear-gradient(45deg, var(--yellow-400), var(--orange-500));
     -webkit-background-clip: text;
@@ -703,7 +1007,6 @@ html[data-theme='light'] .feature-card-inner {
     font-size: 0.9rem;
     color: var(--text-secondary-color);
 }
-
 .footer-right {
     text-align: right;
     max-width: 450px;
@@ -734,20 +1037,7 @@ html[data-theme='light'] .feature-card-inner {
 }
 
 /* ------------------- */
-/* -- 9. АНИМАЦИИ ПРИ СКРОЛЛЕ -- */
-/* ------------------- */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ------------------- */
-/* -- 10. АДАПТИВНОСТЬ (RESPONSIVENESS) -- */
+/* -- 12. АДАПТИВНОСТЬ (RESPONSIVENESS) -- */
 /* ------------------- */
 @media (max-width: 1024px) {
     .features-grid, .links-grid {
@@ -785,55 +1075,4 @@ html[data-theme='light'] .feature-card-inner {
     .footer-socials {
         justify-content: center;
     }
-}
-
-/* ------------------- */
-/* -- 8.5 СТРАНИЦА 404 -- */
-/* ------------------- */
-.error-page-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100vh;
-    width: 100%;
-    padding: 2rem;
-    position: relative;
-    overflow: hidden; /* Важно, чтобы фон не вылезал */
-}
-
-.error-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-.error-title {
-    font-size: clamp(8rem, 25vw, 15rem);
-    font-weight: 900;
-    line-height: 1;
-    margin-bottom: 0;
-    /* Используем тот же градиент, что и в заголовках */
-    background: linear-gradient(45deg, var(--yellow-400), var(--orange-500));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-}
-
-.error-subtitle {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: var(--text-color);
-    margin-top: -2rem; /* Немного наезжает на "404" для эффекта */
-}
-
-.error-text {
-    font-size: 1rem;
-    color: var(--text-secondary-color);
-    max-width: 400px;
-    margin-bottom: 1.5rem;
 }

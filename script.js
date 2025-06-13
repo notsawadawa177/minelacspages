@@ -101,11 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
         type();
     }
     
-    // --- ИСПРАВЛЕНИЕ: 3D ЭФФЕКТ ДЛЯ ВСЕХ КАРТОЧЕК ---
+    // --------------- 5. 3D эффект для карточек ---------------
     const interactiveCards = document.querySelectorAll('.feature-card, .dev-card, .link-block');
     
     interactiveCards.forEach(card => {
-        // Находим внутренний вращающийся элемент или используем саму карточку
         const cardInner = card.querySelector('.feature-card-inner') || card.querySelector('.dev-card-inner') || card;
         
         if (cardInner) {
@@ -126,8 +125,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --------------- 6. Логика для FAQ-аккордеона ---------------
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
 
-    // --------------- 6. Мобильное меню ---------------
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                }
+            });
+
+            if (isActive) {
+                item.classList.remove('active');
+                answer.style.maxHeight = null;
+            } else {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
+
+    // --------------- 7. Мобильное меню ---------------
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mainNav = document.getElementById('main-nav');
 
@@ -145,4 +169,199 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- ИСПРАВЛЕНИЕ: Логика пасхалки и игры "Крестики-нолики" ---
+    const footerLogo = document.querySelector('.footer-logo-img');
+    const modal = document.getElementById('tic-tac-toe-modal');
+    const closeBtn = document.querySelector('.modal-close');
+    let clickCount = 0;
+    let clickTimer = null;
+
+    if (footerLogo && modal) {
+        footerLogo.addEventListener('click', () => {
+            clearTimeout(clickTimer);
+            clickCount++;
+
+            if (clickCount === 5) {
+                modal.classList.remove('hidden');
+                setTimeout(() => modal.classList.add('visible'), 10);
+                handleResetGame();
+                clickCount = 0;
+            }
+
+            clickTimer = setTimeout(() => {
+                clickCount = 0;
+            }, 2000);
+        });
+    }
+
+    // --- ИСПРАВЛЕНИЕ: Полностью переписанная и исправленная логика игры ---
+    const statusDisplay = document.getElementById('game-status');
+    const cells = document.querySelectorAll('.cell');
+    const resetButton = document.getElementById('reset-button');
+    const boardElement = document.getElementById('game-board');
+
+    const player = 'X';
+    const bot = 'O';
+    let gameActive = true;
+    let boardState;
+
+    const winCombos = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [6, 4, 2]
+    ];
+
+    function handleCellClick(e) {
+        const clickedCellIndex = e.target.dataset.index;
+        if (!gameActive || typeof boardState[clickedCellIndex] !== 'number') {
+            return;
+        }
+
+        // Ход игрока
+        performTurn(clickedCellIndex, player);
+
+        // Проверка на победу или ничью после хода игрока
+        if (checkWin(boardState, player)) {
+            gameOver(player);
+            return;
+        }
+        if (checkTie()) {
+            gameOver(null); // null означает ничью
+            return;
+        }
+
+        // Ход бота
+        boardElement.classList.add('locked');
+        statusDisplay.innerHTML = "Бот думает...";
+        
+        setTimeout(() => {
+            const bestMoveIndex = findBestMove(boardState);
+            performTurn(bestMoveIndex, bot);
+
+            if (checkWin(boardState, bot)) {
+                gameOver(bot);
+            } else if (checkTie()) {
+                gameOver(null);
+            } else {
+                statusDisplay.innerHTML = "Ваш ход";
+                boardElement.classList.remove('locked');
+            }
+        }, 500);
+    }
+
+    function performTurn(index, currentPlayer) {
+        boardState[index] = currentPlayer;
+        const cell = document.querySelector(`.cell[data-index='${index}']`);
+        cell.innerText = currentPlayer;
+        cell.classList.add(currentPlayer.toLowerCase());
+    }
+    
+    function checkWin(board, currentPlayer) {
+        for (const combo of winCombos) {
+            if (combo.every(index => board[index] === currentPlayer)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function checkTie() {
+        return boardState.every(cell => typeof cell !== 'number');
+    }
+
+    function gameOver(winner) {
+        gameActive = false;
+        boardElement.classList.remove('locked');
+        if (winner === null) {
+            statusDisplay.innerHTML = "Ничья!";
+        } else if (winner === player) {
+            statusDisplay.innerHTML = "Вы победили! (Это невозможно)";
+        } else {
+            statusDisplay.innerHTML = "Бот победил!";
+        }
+    }
+    
+    function handleResetGame() {
+        gameActive = true;
+        boardState = Array.from(Array(9).keys());
+        cells.forEach(cell => {
+            cell.innerText = '';
+            cell.classList.remove('x', 'o');
+        });
+        statusDisplay.innerHTML = "Ваш ход (X)";
+        boardElement.classList.remove('locked'); // Гарантированно снимаем блокировку
+    }
+
+    // --- Логика ИИ (Минимакс) ---
+    function findBestMove(board) {
+        return minimax(board, bot).index;
+    }
+
+    function minimax(newBoard, currentPlayer) {
+        const availSpots = newBoard.filter(s => typeof s === 'number');
+
+        if (checkWin(newBoard, player)) {
+            return { score: -10 };
+        } else if (checkWin(newBoard, bot)) {
+            return { score: 10 };
+        } else if (availSpots.length === 0) {
+            return { score: 0 };
+        }
+
+        const moves = [];
+        for (let i = 0; i < availSpots.length; i++) {
+            const move = {};
+            move.index = newBoard[availSpots[i]];
+            newBoard[availSpots[i]] = currentPlayer;
+
+            if (currentPlayer === bot) {
+                const result = minimax(newBoard, player);
+                move.score = result.score;
+            } else {
+                const result = minimax(newBoard, bot);
+                move.score = result.score;
+            }
+
+            newBoard[availSpots[i]] = move.index;
+            moves.push(move);
+        }
+
+        let bestMove;
+        if (currentPlayer === bot) {
+            let bestScore = -10000;
+            for (let i = 0; i < moves.length; i++) {
+                if (moves[i].score > bestScore) {
+                    bestScore = moves[i].score;
+                    bestMove = i;
+                }
+            }
+        } else {
+            let bestScore = 10000;
+            for (let i = 0; i < moves.length; i++) {
+                if (moves[i].score < bestScore) {
+                    bestScore = moves[i].score;
+                    bestMove = i;
+                }
+            }
+        }
+        return moves[bestMove];
+    }
+    
+    // Назначение событий
+    cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+    resetButton.addEventListener('click', handleResetGame);
+    
+    // Закрытие модального окна
+    const closeModal = () => {
+        modal.classList.remove('visible');
+        setTimeout(() => modal.classList.add('hidden'), 300);
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
 });

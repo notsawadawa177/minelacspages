@@ -677,9 +677,6 @@ html[data-theme='light'] .feature-card-inner {
 /* ------------------- */
 /* -- 8. СЕКЦИЯ FAQ -- */
 /* ------------------- */
-#faq {
-    padding-bottom: 0;
-}
 #faq .container {
     max-width: 800px;
 }
@@ -780,7 +777,7 @@ html[data-theme='light'] .feature-card-inner {
 /* -- 9. СЕКЦИЯ CTA (Призыв к действию) -- */
 /* ------------------- */
 #cta-final {
-    padding: 6rem 0; /* ИСПРАВЛЕНИЕ: Возвращаем отступ */
+    padding: 6rem 0;
 }
 .cta-card {
     background-color: var(--surface-color);
@@ -929,7 +926,6 @@ html[data-theme='light'] .feature-card-inner {
     gap: 10px;
     margin-bottom: 1.5rem;
 }
-/* --- НОВОЕ: Стиль для блокировки поля --- */
 .board.locked {
     pointer-events: none;
     opacity: 0.8;
@@ -962,6 +958,7 @@ html[data-theme='light'] .cell:hover {
     color: var(--text-secondary-color);
 }
 
+
 /* ------------------- */
 /* -- 11. ФУТЕР (FOOTER) -- */
 /* ------------------- */
@@ -988,7 +985,7 @@ html[data-theme='light'] .cell:hover {
 .footer-logo-img {
     height: 48px;
     width: auto;
-    cursor: pointer; /* Намекаем на интерактивность для пасхалки */
+    cursor: pointer;
 }
 .footer-brand-text {
     display: flex;

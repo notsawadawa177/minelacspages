@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- ИСПРАВЛЕНИЕ: Логика пасхалки и игры "Крестики-нолики" ---
+    // --------------- 8. Логика пасхалки "Крестики-нолики" ---------------
     const footerLogo = document.querySelector('.footer-logo-img');
     const modal = document.getElementById('tic-tac-toe-modal');
     const closeBtn = document.querySelector('.modal-close');
@@ -195,7 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- ИСПРАВЛЕНИЕ: Полностью переписанная и исправленная логика игры ---
     const statusDisplay = document.getElementById('game-status');
     const cells = document.querySelectorAll('.cell');
     const resetButton = document.getElementById('reset-button');
@@ -218,20 +217,17 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Ход игрока
         performTurn(clickedCellIndex, player);
 
-        // Проверка на победу или ничью после хода игрока
         if (checkWin(boardState, player)) {
             gameOver(player);
             return;
         }
         if (checkTie()) {
-            gameOver(null); // null означает ничью
+            gameOver(null);
             return;
         }
 
-        // Ход бота
         boardElement.classList.add('locked');
         statusDisplay.innerHTML = "Бот думает...";
         
@@ -290,10 +286,9 @@ document.addEventListener('DOMContentLoaded', () => {
             cell.classList.remove('x', 'o');
         });
         statusDisplay.innerHTML = "Ваш ход (X)";
-        boardElement.classList.remove('locked'); // Гарантированно снимаем блокировку
+        boardElement.classList.remove('locked');
     }
 
-    // --- Логика ИИ (Минимакс) ---
     function findBestMove(board) {
         return minimax(board, bot).index;
     }
@@ -348,11 +343,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return moves[bestMove];
     }
     
-    // Назначение событий
     cells.forEach(cell => cell.addEventListener('click', handleCellClick));
     resetButton.addEventListener('click', handleResetGame);
     
-    // Закрытие модального окна
     const closeModal = () => {
         modal.classList.remove('visible');
         setTimeout(() => modal.classList.add('hidden'), 300);

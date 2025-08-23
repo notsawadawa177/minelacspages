@@ -199,7 +199,6 @@ html[data-theme='light'] .main-header.scrolled {
     transform: rotate(360deg);
 }
 
-/* --- ИСПРАВЛЕНИЕ: Центрируем навигацию правильно --- */
 .main-nav {
     flex-grow: 1;
     display: flex;
@@ -221,7 +220,7 @@ html[data-theme='light'] .nav-links-wrapper {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Уменьшаем отступ для компактности */
+    gap: 0.5rem;
 }
 
 .nav-links-wrapper ul li a {
@@ -256,7 +255,11 @@ html[data-theme='light'] .nav-links-wrapper ul li a:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* --- ИСПРАВЛЕНИЕ: Кнопка CTA теперь отдельный класс --- */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
 .btn-nav-cta {
     padding: 0.5rem 1.5rem;
     font-size: 1rem;
@@ -273,12 +276,6 @@ html[data-theme='light'] .nav-links-wrapper ul li a:hover {
     transform: translateY(-2px);
 }
 
-/* --- ИСПРАВЛЕНИЕ: Header Actions теперь справа --- */
-.header-actions {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
@@ -607,9 +604,6 @@ html[data-theme='light'] .feature-card-inner {
 /* ------------------- */
 /* -- 8. СЕКЦИЯ FAQ -- */
 /* ------------------- */
-#faq {
-    padding-bottom: 0;
-}
 #faq .container {
     max-width: 800px;
 }
@@ -657,6 +651,54 @@ html[data-theme='light'] .feature-card-inner {
     line-height: 1.6;
     color: var(--text-secondary-color);
 }
+
+
+/* ------------------- */
+/* -- 8.5 СТРАНИЦА 404 -- */
+/* ------------------- */
+.error-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+.error-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.error-title {
+    font-size: clamp(8rem, 25vw, 15rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0;
+    background: linear-gradient(45deg, var(--yellow-400), var(--orange-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.error-subtitle {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: -2rem;
+}
+.error-text {
+    font-size: 1rem;
+    color: var(--text-secondary-color);
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+}
+
 
 /* ------------------- */
 /* -- 9. СЕКЦИЯ CTA (Призыв к действию) -- */
@@ -740,6 +782,7 @@ html[data-theme='light'] .feature-card-inner {
 .cta-particles span:nth-child(4) { left: 60%; width: 6px; height: 6px; animation-delay: 5s; }
 .cta-particles span:nth-child(5) { left: 75%; width: 5px; height: 5px; animation-delay: 8s; animation-duration: 15s; }
 .cta-particles span:nth-child(6) { left: 90%; width: 12px; height: 12px; animation-delay: 4s; }
+
 
 /* ------------------- */
 /* -- 10. ФУТЕР (FOOTER) -- */

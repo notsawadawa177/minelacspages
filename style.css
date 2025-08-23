@@ -199,6 +199,7 @@ html[data-theme='light'] .main-header.scrolled {
     transform: rotate(360deg);
 }
 
+/* --- ИСПРАВЛЕНИЕ: Центрируем навигацию правильно --- */
 .main-nav {
     flex-grow: 1;
     display: flex;
@@ -220,7 +221,7 @@ html[data-theme='light'] .nav-links-wrapper {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.5rem; /* Уменьшаем отступ для компактности */
 }
 
 .nav-links-wrapper ul li a {
@@ -245,109 +246,38 @@ html[data-theme='light'] .nav-links-wrapper ul li a {
     text-shadow: none;
 }
 
-.nav-links-wrapper ul li a:not(.btn-nav-cta):hover,
-.nav-links-wrapper ul .dropdown:hover > a {
+.nav-links-wrapper ul li a:hover {
     transform: translateY(-2px);
     color: white;
     background-color: rgba(255, 255, 255, 0.1);
 }
-html[data-theme='light'] .nav-links-wrapper ul li a:not(.btn-nav-cta):hover,
-html[data-theme='light'] .nav-links-wrapper ul .dropdown:hover > a {
+html[data-theme='light'] .nav-links-wrapper ul li a:hover {
     color: var(--orange-500);
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+/* --- ИСПРАВЛЕНИЕ: Кнопка CTA теперь отдельный класс --- */
 .btn-nav-cta {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
     background-color: var(--orange-500);
     color: white !important;
     text-shadow: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all var(--transition-fast);
 }
 .btn-nav-cta:hover {
     background-color: var(--orange-600) !important;
     transform: translateY(-2px);
 }
 
-.dropdown {
-    position: relative;
-    padding-bottom: 1rem;
-    margin-bottom: -1rem;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 90%; 
-    left: 50%;
-    transform: translateX(-50%); 
-    background-color: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    width: 320px;
-    padding: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity var(--transition-medium), visibility var(--transition-medium);
-    list-style: none;
-}
-
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-.dropdown-menu li a {
-    display: flex;
-    flex-direction: row; 
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 0.75rem 1rem;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: background-color var(--transition-fast);
-}
-
-.dropdown-menu li a:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-}
-
-html[data-theme='light'] .dropdown-menu li a:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-.dropdown-icon {
-    color: var(--orange-500);
-    flex-shrink: 0;
-    padding-top: 0.1rem;
-}
-
-.dropdown-item-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.dropdown-item-content h3 {
-    color: var(--text-color);
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.dropdown-item-content p {
-    color: var(--text-secondary-color);
-    font-size: 0.85rem;
-    line-height: 1.4;
-    white-space: normal;
-}
-
+/* --- ИСПРАВЛЕНИЕ: Header Actions теперь справа --- */
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 .theme-switch-wrapper {
     display: flex;
@@ -677,6 +607,9 @@ html[data-theme='light'] .feature-card-inner {
 /* ------------------- */
 /* -- 8. СЕКЦИЯ FAQ -- */
 /* ------------------- */
+#faq {
+    padding-bottom: 0;
+}
 #faq .container {
     max-width: 800px;
 }
@@ -724,54 +657,6 @@ html[data-theme='light'] .feature-card-inner {
     line-height: 1.6;
     color: var(--text-secondary-color);
 }
-
-
-/* ------------------- */
-/* -- 8.5 СТРАНИЦА 404 -- */
-/* ------------------- */
-.error-page-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100vh;
-    width: 100%;
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-}
-.error-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-.error-title {
-    font-size: clamp(8rem, 25vw, 15rem);
-    font-weight: 900;
-    line-height: 1;
-    margin-bottom: 0;
-    background: linear-gradient(45deg, var(--yellow-400), var(--orange-500));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-}
-.error-subtitle {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: var(--text-color);
-    margin-top: -2rem;
-}
-.error-text {
-    font-size: 1rem;
-    color: var(--text-secondary-color);
-    max-width: 400px;
-    margin-bottom: 1.5rem;
-}
-
 
 /* ------------------- */
 /* -- 9. СЕКЦИЯ CTA (Призыв к действию) -- */
@@ -856,111 +741,8 @@ html[data-theme='light'] .feature-card-inner {
 .cta-particles span:nth-child(5) { left: 75%; width: 5px; height: 5px; animation-delay: 8s; animation-duration: 15s; }
 .cta-particles span:nth-child(6) { left: 90%; width: 12px; height: 12px; animation-delay: 4s; }
 
-
-/* --- НОВОЕ: Стили для модального окна игры --- */
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0,0,0,0.7);
-    backdrop-filter: blur(5px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--transition-medium), visibility var(--transition-medium);
-}
-.modal-overlay.hidden {
-    display: none;
-}
-.modal-overlay.visible {
-    opacity: 1;
-    visibility: visible;
-}
-.modal-content {
-    background-color: var(--surface-color);
-    padding: 2rem;
-    border-radius: 16px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    position: relative;
-    transform: scale(0.95);
-    transition: transform var(--transition-medium);
-}
-.modal-overlay.visible .modal-content {
-    transform: scale(1);
-}
-.modal-close {
-    position: absolute;
-    top: 0.75rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: var(--text-secondary-color);
-    cursor: pointer;
-    line-height: 1;
-    transition: color var(--transition-fast), transform var(--transition-fast);
-}
-.modal-close:hover {
-    color: var(--text-color);
-    transform: scale(1.1);
-}
-.modal-content h2 {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
-}
-.modal-content p {
-    color: var(--text-secondary-color);
-    margin-bottom: 1.5rem;
-}
-
-/* Стили для игры */
-.board {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 1.5rem;
-}
-.board.locked {
-    pointer-events: none;
-    opacity: 0.8;
-}
-
-.cell {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color var(--transition-fast);
-}
-.cell:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-}
-html[data-theme='light'] .cell:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-.cell.x {
-    color: var(--orange-500);
-}
-.cell.o {
-    color: var(--text-secondary-color);
-}
-
-
 /* ------------------- */
-/* -- 11. ФУТЕР (FOOTER) -- */
+/* -- 10. ФУТЕР (FOOTER) -- */
 /* ------------------- */
 .main-footer {
     background-color: var(--surface-color);
@@ -1031,6 +813,108 @@ html[data-theme='light'] .cell:hover {
     font-size: 0.8rem;
     color: #737373;
     line-height: 1.6;
+}
+
+/* ------------------- */
+/* -- 11. ПАСХАЛКА: КРЕСТИКИ-НОЛИКИ -- */
+/* ------------------- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-medium), visibility var(--transition-medium);
+}
+.modal-overlay.hidden {
+    display: none;
+}
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    transform: scale(0.95);
+    transition: transform var(--transition-medium);
+}
+.modal-overlay.visible .modal-content {
+    transform: scale(1);
+}
+.modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-secondary-color);
+    cursor: pointer;
+    line-height: 1;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+.modal-close:hover {
+    color: var(--text-color);
+    transform: scale(1.1);
+}
+.modal-content h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+.modal-content p {
+    color: var(--text-secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+.board.locked {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.cell {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+.cell:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+html[data-theme='light'] .cell:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.cell.x {
+    color: var(--orange-500);
+}
+.cell.o {
+    color: var(--text-secondary-color);
 }
 
 /* ------------------- */
